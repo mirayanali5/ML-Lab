@@ -16,10 +16,6 @@ print("Data Types:\n", df.dtypes)
 
 print("\nMissing Values:\n", df.isnull().sum())
 
-print("\nUnique Values per Column:")
-for col in df.select_dtypes(include='object').columns:
-    print(f"{col}: {df[col].nunique()} unique values")
-
 df.fillna(df.median(numeric_only=True), inplace=True)
 
 plt.figure(figsize=(10,5))
